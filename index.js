@@ -36,7 +36,7 @@ var pokemon = [];
 
 
 client.on('ready', () => {
-    client.user.setActivity('NARUTO X BORUTO Ultimate Ninja STORM CONNECTIONS', { type: "PLAYING" });
+    client.user.setActivity('siuuu', { type: "COMPETING" });
     console.log('-------------------------------');
     console.log(`${client.user.username} est co`);
     console.log('-------------------------------');
@@ -94,8 +94,9 @@ function afterLogCmd() {
         }, time);  
         
        
-    }
+
 }
+
 
 
 
@@ -163,3 +164,13 @@ function displayPokemon() {
 
 
 client.login(token);
+
+
+
+
+
+
+
+
+
+
