@@ -1,9 +1,5 @@
 const { Client } = require('discord.js-selfbot-v13');
 
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
-}
-
 const token = process.env.TOKEN;
 const channelId = process.env.CHANNEL_ID;
 
@@ -16,22 +12,22 @@ const client = new Client({
 });
 
 client.on('ready', () => {
-    console.log(`Connecté en tant que ${client.user.username}.`);
-    console.log(`Le message '$p' sera envoyé dans le salon ${channelId} toutes les 2 heures.`);
+    console.log(`Connect ${client.user.username}.`);
+    console.log(` message '$p'  ${channelId} `);
     
     const interval = 2 * 60 * 60 * 1000;
 
     client.channels.fetch(channelId)
         .then(channel => {
-            console.log(`Salon "${channel.name}" trouvé avec succès.`);
+            console.log(`Salon "${channel.name}" check`);
 
             const sendMessage = () => {
                 channel.send('$p')
-                    .then(msg => console.log(`[${new Date().toLocaleTimeString()}] Message '$p' envoyé avec succès !`))
+                    .then(msg => console.log(`[${new Date().toLocaleTimeString()}]  '$p' `))
                     .catch(() => {});
             };
 
-            console.log("Envoi du premier message...");
+            console.log("tr");
             sendMessage();
 
             setInterval(sendMessage, interval);
@@ -41,5 +37,5 @@ client.on('ready', () => {
         });
 });
 
-console.log("Tentative de connexion à Discord...");
+console.log("co");
 client.login(token);
