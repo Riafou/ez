@@ -1,5 +1,8 @@
 const { Client } = require('discord.js-selfbot-v13');
-require('dotenv').config();
+
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 
 const token = process.env.TOKEN;
 const channelId = process.env.CHANNEL_ID;
@@ -33,7 +36,7 @@ client.on('ready', () => {
 
             setInterval(sendMessage, interval);
         })
-        .catch(error => {
+        .catch(() => {
             process.exit(1);
         });
 });
